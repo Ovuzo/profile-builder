@@ -65,8 +65,8 @@ const buildProfileCard = ({
 }) => {
   // Ternary for availability
   const availabilityStatus = isAvailable 
-    ? "Available ✅" 
-    : "Not Available ❌";
+    ? "Available" 
+    : "Not Available";
   
   // Optional chaining and nullish coalescing for mentor
   const mentorInfo = mentor?.name ?? "No mentor assigned";
@@ -113,39 +113,39 @@ const getAllUniqueSkillsAlt = () => {
 const uniqueSkills = [...new Set(developers.flatMap(d => d.skills))].sort();
 
 // Building Profile Cards
-const buildProfileCard = ({
-  name,
-  track,
-  skills,
-  projects,
-  isAvailable,
-  mentor
-}) => {
-  const availabilityStatus = isAvailable
-    ? "Available ✅"
-    : "Not Available ❌";
+// const buildProfileCard = ({
+//   name,
+//   track,
+//   skills,
+//   projects,
+//   isAvailable,
+//   mentor
+// }) => {
+//   const availabilityStatus = isAvailable
+//     ? "Available ✅"
+//     : "Not Available ❌";
 
-  const mentorInfo = mentor?.name ?? "No mentor assigned";
+//   const mentorInfo = mentor?.name ?? "No mentor assigned";
 
-  const skillsList =
-    skills.length === 0 ? "No skills listed yet" : skills.join(", ");
+//   const skillsList =
+//     skills.length === 0 ? "No skills listed yet" : skills.join(", ");
 
-  return `
+//   return `
 
-   ${name}
-   Track: ${track}
-   Status: ${availabilityStatus}
-   Skills: ${skillsList}
-   Projects: ${projects.completed} completed,
-              ${projects.ongoing} ongoing
-   Mentor: ${mentorInfo}
+//    ${name}
+//    Track: ${track}
+//    Status: ${availabilityStatus}
+//    Skills: ${skillsList}
+//    Projects: ${projects.completed} completed,
+//               ${projects.ongoing} ongoing
+//    Mentor: ${mentorInfo}
 
-`.trim();
-};
+// `.trim();
+// };
 
-// Apply to all developers using .map()
-developers.map(buildProfileCard).forEach(card => {
-  console.log(card);
-});
+// // Apply to all developers using .map()
+// developers.map(buildProfileCard).forEach(card => {
+//   console.log(card);
+// });
 
 
