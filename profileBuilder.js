@@ -109,7 +109,7 @@ const getAllUniqueSkillsAlt = () => {
   return [...new Set(allSkills)].sort();
 };
 
-// One-liner version 🚀
+// One-liner version 
 const uniqueSkills = [...new Set(developers.flatMap(d => d.skills))].sort();
 
 
